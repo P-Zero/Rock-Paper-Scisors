@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra vs Papel vs Tijeras</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section id="initial_screen">
+        <h1 id="title">Piedra vs Papel vs Tijera</h1>
+        <button id="play_button">JUGAR</button>
+        
+        <div id="main_menu">
+            <button id="singleplayer" class="menu_button">Un jugador</button>
+            <button id="multiplayer" class="menu_button">Multijugador</button>
+            <button id="options" class="menu_button">Opciones</button>
+        </div>
+
+        <section id="battle">
+            <div id="player_button_div" class="battle_button_div">
+                <button id="rock" class="battle_button">Piedra</button>
+                <button id="paper" class="battle_button">Papel</button>
+                <button id="scisors" class="battle_button">Tijera</button>
+            </div>
+            <div id="p_l_holder" class="lives_holder">
+                <p id="player_lives" class="lives">🧡🧡🧡</p>
+            </div>
+            <div id="e_l_holder" class="lives_holder">
+                <p id="enemy_lives" class="lives">🧡🧡🧡</p>
+            </div>
+            <div id="enemy_button_div" class="battle_button_div">
+                <p id="bot_selection">?</p>
+            </div>
+            <div id="history"></div>
+            <section id="game_over">
+                <button id="restart">Finalizar</button>
+            </section>
+        </section>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
