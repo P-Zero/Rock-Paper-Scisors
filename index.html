@@ -5,24 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra vs Papel vs Tijeras</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <section id="initial_screen">
         <h1 id="title">Piedra vs Papel vs Tijera</h1>
-        <button id="play_button">JUGAR</button>
+        <button class="button" id="play_button">JUGAR</button>
         
-        <div id="main_menu">
-            <button id="singleplayer" class="menu_button">Un jugador</button>
-            <button id="multiplayer" class="menu_button">Multijugador</button>
-            <button id="options" class="menu_button">Opciones</button>
-        </div>
-
+        <section id="main_menu">
+            <button id="singleplayer" class="button">Un jugador</button>
+            <button id="multiplayer" class="button">Multijugador</button>
+            <button id="options" class="button">Opciones</button>
+        </section>
+        <section id="carachters">
+            <div id="carachters_title">
+                <p>Elige tu personaje</p>
+            </div>
+            <div id="carachter_select">
+                
+            </div>
+            <div id="ready_button">
+                <button id="ready" class="button">Listo</button>
+            </div>
+        </section>
         <section id="battle">
             <div id="player_button_div" class="battle_button_div">
-                <button id="rock" class="battle_button">Piedra</button>
-                <button id="paper" class="battle_button">Papel</button>
-                <button id="scisors" class="battle_button">Tijera</button>
+                <p id="player_carachter"></p>
+                <button id="rock" class="button">Piedra</button>
+                <button id="paper" class="button">Papel</button>
+                <button id="scisors" class="button">Tijera</button>
             </div>
             <div id="p_l_holder" class="lives_holder">
                 <p id="player_lives" class="lives">🧡🧡🧡</p>
@@ -34,11 +45,11 @@
                 <p id="bot_selection">?</p>
             </div>
             <div id="history"></div>
-            <section id="game_over">
-                <button id="restart">Finalizar</button>
-            </section>
+            <div id="game_over">
+                <button class="button" id="restart">Reiniciar</button>
+            </div>
         </section>
     </section>
-    <script src="script.js"></script>
+    <script src="script/script.js"></script>
 </body>
 </html>
