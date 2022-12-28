@@ -12,9 +12,10 @@ function start(){
     const scisorsButton = document.getElementById("scisors")
     const restart = document.getElementById("restart")
     const historyMessages = document.getElementById("history")
-    const carachterName = document.getElementById("player_carachter")
     const carachterSelect = document.getElementById("carachter_select")
     const ready = document.getElementById("ready")
+    const plyrImg = document.getElementById("div_plyr_img")
+    const nmyImg = document.getElementById("div_nmy_img")
 
     playButton.addEventListener("click", begin)
     singleplayer.addEventListener("click", carachterSelection)
@@ -34,8 +35,12 @@ function start(){
     let enemyLives = 3
     let enemyAttack
     let playerAttack
+    let inputGohan
+    let inputSaitama
+    let inputComiste
     let carachters = []
     let carachtersSelection
+    let randomEnemy = random(0, 2)
 
     class Hand{
         constructor(name, skin, id, attack){
@@ -46,8 +51,8 @@ function start(){
         }
     }
 
-    let saitama = new Hand("Saitama", "css/img/saitama.jpg", "saitama")
-    let gohan = new Hand("Gohan", "css/img/gohan.jpg", "gohan")
+    let saitama = new Hand("Saitama", "css/img/saitama.png", "saitama")
+    let gohan = new Hand("Gohan", "css/img/gohan.png", "gohan")
     let comiste = new Hand("Comiste", "css/img/hand.png", "comiste")
 
     saitama.attack.push(
@@ -82,13 +87,29 @@ function start(){
             </div>
             `
             
-            carachterSelect.innerHTML += carachtersSelection  
+            carachterSelect.innerHTML += carachtersSelection
         })
+
+        inputGohan = document.getElementById("Gohan")
+        inputSaitama = document.getElementById("Saitama")
+        inputComiste = document.getElementById("Comiste")
     }
 
     function startDuel(){
         carachtersSection.style.display = "none"
         battle.style.display = "grid"
+
+        if (inputGohan.checked) {
+            plyrImg.innerHTML = `<img class="battle_imgs" src="${gohan.skin}" alt="${gohan.name}">`
+        } else if (inputSaitama.checked) {
+            plyrImg.innerHTML = `<img class="battle_imgs" src="${saitama.skin}" alt="${saitama.name}">`
+        } else if (inputComiste.checked) {
+            plyrImg.innerHTML = `<img class="battle_imgs" src="${comiste.skin}" alt="${comiste.name}">`
+        } else {
+            alert('Selecciona un guerrero')
+        }
+
+        nmyImg.innerHTML = `<img class="battle_imgs" src=${carachters[randomEnemy].skin} alt="${randomEnemy.name}"></img>`
     }
     
     function rockAttack(){
@@ -191,8 +212,8 @@ function start(){
         gameOver.style.display = "flex"
     }
 
-    function random(min,max){
-        return Math.floor(Math.random()*(max-min+1)+min)
+    function random(min, max){
+        return Math.floor(Math.random() * (max - min + 1) + min)
     }
 
     function restartGame(){

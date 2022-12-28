@@ -111,13 +111,13 @@ h1{
     
 }
 
-input{
-    display: none;
-}
-
 input:checked + label img{
     border: #F0A500 4px solid;
     
+}
+
+input{
+    display: none;
 }
 
 #carachter_select p{
@@ -145,6 +145,8 @@ input:checked + label img{
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-top: 5vh;
 
 }
 
@@ -152,9 +154,42 @@ input:checked + label img{
     grid-row-start: 3;
     grid-row-end: 4;
     width: 500px;
-    height: 600px;
-    border: 4px solid #E6D5B8;
+    height: 550px;
+    border: 4px solid #E45826;
     border-radius: 12px;
+    background-color: #1B1A17;
+}
+
+#battle_imgs{
+    grid-row-start: 1;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    z-index: -1;
+}
+
+.battle_img{
+    width: 45vw;
+    height: 85vh;
+}
+
+.battle_imgs{
+    width: 100%;
+    height: 100%;
+}
+
+#div_plyr_img{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#div_nmy_img{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    transform: rotateY(180deg);
 }
 
 
@@ -195,7 +230,12 @@ input:checked + label img{
     grid-row-end: 3;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    background-color: #1B1A17;
+    width: 500px;
+    height: 120px;
+    border: 4px solid #E45826;
+    border-radius: 12px;
 }
 
 .lives_holder p{
